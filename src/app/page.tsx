@@ -17,7 +17,7 @@ export default function Home() {
       </Select>
       <Input />
       <div className='p-5 flex items-center gap-4'>
-        .<Button size={"lg"}>Primary</Button>
+        <Button size={"lg"}>Pr imary</Button>
         <Button variant={"secondary"}>Secondary</Button>
         <Button variant={"destructive"}>Destructive</Button>
         <Button variant={"ghost"}>Ghost</Button>
