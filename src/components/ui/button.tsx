@@ -18,10 +18,10 @@ const buttonVariants = cva(
         tertiary: "bg-blue-100 text-blue-600 border-transparent hover:bg-blue-200 shadow-none",
       },
       size: {
-        default: "h-10 px-4 py-2",
+        default: "h-9 px-4 py-2",
         xs: "h-7 rounded-md px-2 text-xs",
         sm: "h-8 rounded-md px-3",
-        lg: "h-12 rounded-md px-8",
+        lg: "h-9 rounded-md px-8",
         icon: "h-8 w-8",
       },
     },

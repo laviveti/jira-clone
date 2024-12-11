@@ -1,0 +1,7 @@
+feat(1/0h53): implementando logo em auth layout
+feat(1/1h10): implementando SignInCard
+feat(1/1h17): implementando SignUpCard
+feat(1/1h25): implementando React Fook Form em SignInCard
+feat(1/1h25): implementando React Fook Form em SignInCard
+feat(1/1h42): instalando Hono.js
+feat(1/1h45): Hono: primeiras impressões
