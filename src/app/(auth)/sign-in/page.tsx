@@ -1,7 +1,6 @@
+"use client";
+import { SignInCard } from "@/features/auth/components/sign-in-card";
+
 export default function LoginPage() {
-  return (
-    <div>
-      <h1>Sign In</h1>
-    </div>
-  );
+  return <SignInCard />;
 }
