@@ -6,3 +6,4 @@ feat(1/1h25): implementando React Fook Form em SignInCard
 feat(1/1h42): instalando Hono.js
 feat(1/1h45): Hono: primeiras impressões
 feat(1/2h04): criando arquivo rpc.ts
+feat(1/2h18): implementando use-login.ts
