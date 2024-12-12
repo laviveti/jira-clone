@@ -21,7 +21,7 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
             <Link href={isSignIn ? "/sign-up" : "/sign-in"}>{isSignIn ? "Sign Up" : "Login"}</Link>
           </Button>
         </nav>
-        <div className='flex flex-col items-center justify-center pt-4 md:pt-5'>{children}</div>
+        <div className='flex flex-col items-center justify-center pt-4 md:pt-4'>{children}</div>
       </div>
     </main>
   );
