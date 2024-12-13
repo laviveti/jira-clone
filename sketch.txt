@@ -9,3 +9,4 @@ feat(1/2h04): criando arquivo rpc.ts
 feat(1/2h18): implementando use-login.ts
 feat(1/2h21): implementando use-register.ts
 feat(1/2h48): Appwrite - implementando login e registro
+teste
