@@ -1,30 +1,26 @@
+"use client";
+
+import React from "react";
+import { useCurrent } from "@/features/auth/api/use-current";
+import { useRouter } from "next/navigation";
+import { useLogout } from "@/features/auth/api/use-logout";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export default function Home() {
+  const router = useRouter();
+  const { data, isLoading } = useCurrent();
+  const { mutate } = useLogout();
+
+  React.useEffect(() => {
+    if (!isLoading && !data) {
+      router.push("/sign-in");
+    }
+  }, [data, isLoading, router]);
+
   return (
     <div className='flex p-2 gap-3 flex-col'>
-      <Select>
-        <SelectTrigger className='w-[180px]'>
-          <SelectValue placeholder='Theme' />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value='light'>Light</SelectItem>
-          <SelectItem value='dark'>Dark</SelectItem>
-          <SelectItem value='system'>System</SelectItem>
-        </SelectContent>
-      </Select>
-      <Input />
-      <div className='p-5 flex items-center gap-4'>
-        <Button size={"lg"}>Pr imary</Button>
-        <Button variant={"secondary"}>Secondary</Button>
-        <Button variant={"destructive"}>Destructive</Button>
-        <Button variant={"ghost"}>Ghost</Button>
-        <Button variant={"muted"}>Muted</Button>
-        <Button variant={"outline"}>Outline</Button>
-        <Button variant={"tertiary"}>Tertiary</Button>
-      </div>
+      Only authenticated users can see this
+      <Button onClick={() => mutate()}>Logout</Button>
     </div>
   );
 }
