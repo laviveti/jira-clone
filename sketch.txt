@@ -12,3 +12,4 @@ feat(1/2h48): Appwrite - implementando login e registro
 feat(1/3h04): implementando sessionMiddleware e API do usuário atual
 feat(1/3h06): implementando hook use-current
 feat(1/3h12): implementando hook use-logout
+feat(1/3h39): redirecionando usuário nos principais hooks com as features Next.js

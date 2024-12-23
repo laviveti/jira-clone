@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
@@ -86,7 +87,7 @@ export const SignUpCard = () => {
               )}
             />
             <Button disabled={false} size={"lg"} className='w-full'>
-              Sign Up
+              Register
             </Button>
           </form>
         </Form>
