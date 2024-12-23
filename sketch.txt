@@ -13,3 +13,4 @@ feat(1/3h04): implementando sessionMiddleware e API do usuário atual
 feat(1/3h06): implementando hook use-current
 feat(1/3h12): implementando hook use-logout
 feat(1/3h39): redirecionando usuário nos principais hooks com as features Next.js
+feat(1/3h40): desabilitando botões de login e cadastro enquanto os hooks estiverem carregando
