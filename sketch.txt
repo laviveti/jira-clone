@@ -1,3 +1,4 @@
+feat(1/4h01): implementando sidebar, navbar e navigation
 feat(1/3h46): criando route group (dashboard)
 feat(1/3h40): desabilitando botões de login e cadastro enquanto os hooks estiverem carregando
 feat(1/3h39): redirecionando usuário nos principais hooks com as features Next.js

@@ -1,7 +1,6 @@
 import React from "react";
 
 import { redirect } from "next/navigation";
-import { UserButton } from "@/features/auth/components/user-button";
 import { getCurrent } from "@/features/auth/actions";
 
 export default async function Home() {
@@ -11,9 +10,5 @@ export default async function Home() {
 
   console.log({ user });
 
-  return (
-    <div>
-      <UserButton />
-    </div>
-  );
+  return <div>This is a home page</div>;
 }
