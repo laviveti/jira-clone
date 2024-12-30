@@ -8,7 +8,5 @@ export default async function Home() {
 
   if (!user) redirect("/sign-in");
 
-  console.log({ user });
-
   return <div>This is a home page</div>;
 }
