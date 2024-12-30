@@ -13,6 +13,7 @@ const app = new Hono().post("/", zValidator("json", createWorkspaceSchema), sess
 
   const workspace = await databases.createDocument(DATABASE_ID, WORKSPACES_ID, ID.unique(), {
     name,
+    userId: user.$id,
   });
 
   return c.json({ data: workspace });

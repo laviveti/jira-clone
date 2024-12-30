@@ -1,3 +1,4 @@
+feat(1/4h32): iniciando componente CreateWorkspaceForm
 feat(1/4h18): Workspaces: API de criação
 feat(1/4h16): Workspaces: preparando endpoint de criação
 feat(1/4h07): useState e useEffect em MobileSidebar
