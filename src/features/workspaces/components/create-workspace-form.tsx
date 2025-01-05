@@ -1,4 +1,7 @@
 "use client";
+import React from "react";
+import Image from "next/image";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { createWorkspaceSchema } from "../schemas";
@@ -9,6 +12,7 @@ import { DottedSeparator } from "@/components/dotted-separator";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useCreateWorkspace } from "../api/use-create-workspace";
+import { ImageIcon } from "lucide-react";
 
 interface CreateWorkspaceFormProps {
   onCancel?: () => void;
@@ -16,6 +20,8 @@ interface CreateWorkspaceFormProps {
 
 export const CreateWorkspaceForm = ({ onCancel }: CreateWorkspaceFormProps) => {
   const { mutate, isPending } = useCreateWorkspace();
+
+  const inputRef = React.useRef<HTMLInputElement>(null);
 
   const form = useForm<z.infer<typeof createWorkspaceSchema>>({
     resolver: zodResolver(createWorkspaceSchema),
@@ -51,6 +57,32 @@ export const CreateWorkspaceForm = ({ onCancel }: CreateWorkspaceFormProps) => {
                     </FormControl>
                     <FormMessage />
                   </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='image'
+                render={({ field }) => (
+                  <div className='flex flex-col gap-y-2'>
+                    <div className='flex items-center gap-x-5'>
+                      {field.value ? (
+                        <div className='size-[72px] relative rounded-md overflow-hidden'>
+                          <Image
+                            alt='Logo'
+                            fill
+                            className='object-cover'
+                            src={field.value instanceof File ? URL.createObjectURL(field.value) : field.value}
+                          />
+                        </div>
+                      ) : (
+                        <Avatar className=' size-[72px]'>
+                          <AvatarFallback>
+                            <ImageIcon className='size-[36px] text-neutral-400' />
+                          </AvatarFallback>
+                        </Avatar>
+                      )}
+                    </div>
+                  </div>
                 )}
               />
             </div>
