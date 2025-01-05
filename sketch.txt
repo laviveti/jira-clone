@@ -1,3 +1,4 @@
+feat(1/4h37): lidando com erros nas chamadas API usando toast
 feat(1/4h35): implementando sonner
 feat(1/4h18): Workspaces: API de criação
 feat(1/4h16): Workspaces: preparando endpoint de criação
