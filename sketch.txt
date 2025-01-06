@@ -1,3 +1,4 @@
+feat(1/5h14): iniciando WorkspaceSwitcher
 feat(1/5h04): envio de imagem ao criar workspace
 feat(1/4h57): preparando adição de imagens no formulário
 feat(1/4h37): lidando com erros nas chamadas API usando toast
