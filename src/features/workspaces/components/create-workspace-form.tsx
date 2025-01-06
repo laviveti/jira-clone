@@ -31,7 +31,24 @@ export const CreateWorkspaceForm = ({ onCancel }: CreateWorkspaceFormProps) => {
   });
 
   const onSubmit = (values: z.infer<typeof createWorkspaceSchema>) => {
-    mutate({ json: values });
+    const finalValues = {
+      ...values,
+      image: values.image instanceof File ? values.image : "",
+    };
+
+    mutate(
+      { form: finalValues },
+      {
+        onSuccess: () => form.reset(),
+      }
+    );
+  };
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      form.setValue("image", file);
+    }
   };
 
   return (
@@ -81,6 +98,27 @@ export const CreateWorkspaceForm = ({ onCancel }: CreateWorkspaceFormProps) => {
                           </AvatarFallback>
                         </Avatar>
                       )}
+                      <div className='flex flex-col'>
+                        <p className='text-sm'>Workspace Icon</p>
+                        <p className='text-sm text-muted-foreground'>JPG, PNG, SVG or JPEG, max 1mb</p>
+                        <input
+                          className='hidden'
+                          type='file'
+                          accept='.jpg, .png, .jpeg, .svg'
+                          ref={inputRef}
+                          onChange={handleImageChange}
+                          disabled={isPending}
+                        />
+                        <Button
+                          type='button'
+                          disabled={isPending}
+                          variant={"tertiary"}
+                          size='xs'
+                          className='w-fit mt-2'
+                          onClick={() => inputRef.current?.click()}>
+                          Upload image
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 )}
