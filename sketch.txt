@@ -1,3 +1,4 @@
+feat(1/6h08): estado na URL com nuqs
 feat(1/5h52): estado de carregamento na página dashboard
 feat(1/5h44): criando WorkspaceIdPage
 feat(1/5h38): gerando inviteCode ao criar workspace
