@@ -1,3 +1,4 @@
+feat(1/5h44): criando WorkspaceIdPage
 feat(1/5h38): gerando inviteCode ao criar workspace
 feat(1/5h32): assegurando que o usuário visualize apenas os workspaces que possui
 feat(1/5h19): implementando WorkspaceAvatar
