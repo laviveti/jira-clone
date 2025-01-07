@@ -1,3 +1,4 @@
+feat(1/5h32): assegurando que o usuário visualize apenas os workspaces que possui
 feat(1/5h19): implementando WorkspaceAvatar
 feat(1/5h14): iniciando WorkspaceSwitcher
 feat(1/5h04): envio de imagem ao criar workspace
