@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { useCreateWorkspace } from "../api/use-create-workspace";
 import { ImageIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 interface CreateWorkspaceFormProps {
   onCancel?: () => void;
@@ -131,7 +132,13 @@ export const CreateWorkspaceForm = ({ onCancel }: CreateWorkspaceFormProps) => {
             </div>
             <DottedSeparator className='py-7' />
             <div className='flex items-center justify-between'>
-              <Button type='button' disabled={isPending} size={"lg"} variant='secondary' onClick={onCancel}>
+              <Button
+                className={cn(!onCancel && "invisible")}
+                type='button'
+                disabled={isPending}
+                size={"lg"}
+                variant='secondary'
+                onClick={onCancel}>
                 Cancel
               </Button>
               <Button type='submit' disabled={isPending} size={"lg"}>
