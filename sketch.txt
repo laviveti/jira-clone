@@ -1,3 +1,4 @@
+feat(1/6h39): Workspaces: iniciando tipagem
 feat(1/6h34): Workspaces: API de atualização
 feat(1/6h34): Workspaces: preparando endpoint de atualização
 feat(1/6h22): página de criação de workspace
