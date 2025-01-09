@@ -9,7 +9,7 @@ export default function StandaloneLayout({ children }: StandaloneLayoutProps) {
   return (
     <main className='bg-neutral-100 min-h-screen'>
       <div className='mx-auto max-w-screen-2xl p-4'>
-        <nav className='flex justify-between items-center h-[73px]'>
+        <nav className='flex justify-between items-center h-[28px]'>
           <Link href='/'>
             <Image src='/logo.svg' alt='Logo' height={56} width={152} />
           </Link>
