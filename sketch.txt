@@ -1,3 +1,4 @@
+feat(1/8h07): implementando JoinWorkspaceForm
 feat(1/7h47): workspaces - atualizando código de convite
 feat(1/7h42): Workspaces: Copiando link direto
 feat(1/7h32): deleção de workspaces

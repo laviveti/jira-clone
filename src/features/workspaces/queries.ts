@@ -35,7 +35,6 @@ export const getWorkspaces = async () => {
 interface GetWorkspaceProps {
   workspaceId: string;
 }
-
 export const getWorkspace = async ({ workspaceId }: GetWorkspaceProps) => {
   try {
     const { account, databases } = await createSessionClient();
@@ -52,6 +51,22 @@ export const getWorkspace = async ({ workspaceId }: GetWorkspaceProps) => {
     const workspace = await databases.getDocument<Workspace>(DATABASE_ID, WORKSPACES_ID, workspaceId);
 
     return workspace;
+  } catch (err) {
+    console.log({ err });
+    return null;
+  }
+};
+
+interface GetWorkspaceInfoProps {
+  workspaceId: string;
+}
+export const getWorkspaceInfo = async ({ workspaceId }: GetWorkspaceInfoProps) => {
+  try {
+    const { databases } = await createSessionClient();
+
+    const workspace = await databases.getDocument<Workspace>(DATABASE_ID, WORKSPACES_ID, workspaceId);
+
+    return { name: workspace.name };
   } catch (err) {
     console.log({ err });
     return null;
