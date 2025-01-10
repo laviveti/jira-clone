@@ -1,7 +1,7 @@
 feat(2/0h17): projects - preparando api de busca de projetos
 feat(2/0h06): projects - preparando endpoint de busca
 
----
+--- Build a Jira Clone With Nextjs, React, Tailwind, Hono.js | Part 1/2 ✅
 
 feat(1/8h49): members - implementando página
 feat(1/8h26): members - preparando APIs
