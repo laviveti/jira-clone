@@ -1,3 +1,4 @@
+feat(1/8h26): members - preparando APIs
 feat(1/8h18): members - preparando endpoints
 feat(1/8h07): implementando JoinWorkspaceForm
 feat(1/7h47): workspaces - atualizando código de convite
