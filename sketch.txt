@@ -1,3 +1,4 @@
+feat(1/8h49): members - implementando página
 feat(1/8h26): members - preparando APIs
 feat(1/8h18): members - preparando endpoints
 feat(1/8h07): implementando JoinWorkspaceForm
