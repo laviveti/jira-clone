@@ -1,3 +1,4 @@
+feat(2/0h17): projects - preparando api de busca de projetos
 feat(2/0h06): projects - preparando endpoint de busca
 
 ---

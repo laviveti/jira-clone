@@ -11,6 +11,8 @@ const app = new Hono().get("/", sessionMiddleware, zValidator("query", z.object(
   const databases = c.get("databases");
   const { workspaceId } = c.req.valid("query");
 
+  if (!workspaceId) return c.json({ error: "Missing workspaceId" }, 400);
+
   const member = await getMember({ databases, workspaceId, userId: user.$id });
 
   if (!member) return c.json({ error: "Unauthorized" }, 401);
