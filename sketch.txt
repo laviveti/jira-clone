@@ -1,3 +1,4 @@
+feat(2/0h31): projects - formulário e modal de criação de projeto
 feat(2/0h17): projects - preparando api de busca de projetos
 feat(2/0h06): projects - preparando endpoint de busca
 
