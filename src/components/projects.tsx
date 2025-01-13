@@ -19,8 +19,8 @@ export const Projects = () => {
   const { data } = useGetProjects({ workspaceId });
 
   return (
-    <div className='flex flex-col gap-y-2'>
-      <div className='flex items-center justify-between'>
+    <div className='flex flex-col'>
+      <div className='flex items-center mb-2 justify-between'>
         <p className='text-xs uppercase text-neutral-500'>Projects</p>
         <RiAddCircleFill onClick={open} className='size-5 text-neutral-500 cursor-pointer hover:opacity-75 transition' />
       </div>
@@ -32,7 +32,7 @@ export const Projects = () => {
           <Link href={href} key={project.$id}>
             <div
               className={cn(
-                "flex items-center gap-2.5 p-2.5 rounded-md hover:opacity-75 transition cursor-pointer text-neutral-500",
+                "flex items-center gap-2.5 p-2 rounded-md hover:opacity-75 transition cursor-pointer text-neutral-500",
                 isActive && "bg-white shadow-sm hover:opacity-100 text-primary"
               )}>
               <ProjectAvatar image={project.imageUrl} name={project.name} />
