@@ -32,7 +32,7 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
   const { mutate: deleteWorkspace, isPending: isDeletingWorkspace } = useDeleteWorkspace();
   const { mutate: resetInviteCode, isPending: isResettingInviteCode } = useResetInviteCode();
 
-  const [DeleteDialog, confirmDelete] = useConfirm("Delete Workspace", "This action cannot be undore?", "destructive");
+  const [DeleteDialog, confirmDelete] = useConfirm("Delete Workspace", "This action cannot be undone?", "destructive");
   const [ResetDialog, confirmReset] = useConfirm("Reset invite link", "This will invalidate the current invite link?", "destructive");
 
   const inputRef = React.useRef<HTMLInputElement>(null);

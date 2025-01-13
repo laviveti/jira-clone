@@ -1,3 +1,4 @@
+feat(2/1h15): projects - redirecionando ao criar um projeto
 feat(2/1h10): projects - componente EditProjectForm
 feat(2/1h00): hooks de atualização de projetos e atualizando server components
 feat(2/0h53): lidando com erros e carregamento de informações

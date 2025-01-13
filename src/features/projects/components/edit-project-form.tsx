@@ -17,6 +17,7 @@ import { cn } from "@/lib/utils";
 import { Project } from "../types";
 import { useUpdateProject } from "../api/use-update-project";
 import { useConfirm } from "@/hooks/use-confirm";
+import { useDeleteProject } from "../api/use-delete-project";
 
 interface EditProjectFormProps {
   onCancel?: () => void;
@@ -26,9 +27,9 @@ interface EditProjectFormProps {
 export const EditProjectForm = ({ onCancel, initialValues }: EditProjectFormProps) => {
   const router = useRouter();
   const { mutate, isPending } = useUpdateProject();
-  // const { mutate: deleteProject, isPending: isDeletingProject } = useDeleteProject()
+  const { mutate: deleteProject, isPending: isDeletingProject } = useDeleteProject();
 
-  const [DeleteDialog, confirmDelete] = useConfirm("Delete Project", "This action cannot be undore?", "destructive");
+  const [DeleteDialog, confirmDelete] = useConfirm("Delete Project", "This action cannot be undone?", "destructive");
 
   const inputRef = React.useRef<HTMLInputElement>(null);
 
@@ -43,15 +44,14 @@ export const EditProjectForm = ({ onCancel, initialValues }: EditProjectFormProp
   const handleDelete = async () => {
     const ok = await confirmDelete();
     if (!ok) return;
-    // deleteProject(
-    //   { param: { projectId: initialValues.$id } },
-    //   {
-    //     onSuccess: () => {
-    //       router.push("/");
-    //       window.location.href = "/";
-    //     },
-    //   }
-    // );
+    deleteProject(
+      { param: { projectId: initialValues.$id } },
+      {
+        onSuccess: () => {
+          window.location.href = `/workspaces/${initialValues.workspaceId}`;
+        },
+      }
+    );
   };
 
   const onSubmit = (values: z.infer<typeof updateProjectSchema>) => {
