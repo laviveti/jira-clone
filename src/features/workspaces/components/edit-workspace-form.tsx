@@ -48,14 +48,7 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
   const handleResetInviteCode = async () => {
     const ok = await confirmReset();
     if (!ok) return;
-    resetInviteCode(
-      { param: { workspaceId: initialValues.$id } },
-      {
-        onSuccess: () => {
-          router.refresh(); // TODO: Refresh server components
-        },
-      }
-    );
+    resetInviteCode({ param: { workspaceId: initialValues.$id } });
   };
 
   const handleDelete = async () => {
@@ -81,9 +74,8 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
     mutate(
       { form: finalValues, param: { workspaceId: initialValues.$id } },
       {
-        onSuccess: ({ data }) => {
+        onSuccess: () => {
           form.reset();
-          router.push(`/workspaces/${data.$id}`);
         },
       }
     );

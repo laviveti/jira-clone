@@ -1,3 +1,4 @@
+feat(2/1h00): hooks de atualização de projetos e atualizando server components
 feat(2/0h53): lidando com erros e carregamento de informações
 feat(2/0h35): projects - implementando ProjectAvatar
 feat(2/0h31): projects - formulário e modal de criação de projeto
