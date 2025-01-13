@@ -1,3 +1,4 @@
+feat(2/1h29): tasks - criando schema para criação de tarefas
 feat(2/1h23): projects - iniciando componente TaskViewSwitcher e a collection tasks no Appwrite
 feat(2/1h15): projects - redirecionando ao criar um projeto
 feat(2/1h10): projects - componente EditProjectForm
