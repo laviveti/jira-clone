@@ -1,3 +1,4 @@
+feat(2/0h53): lidando com erros e carregamento de informações
 feat(2/0h35): projects - implementando ProjectAvatar
 feat(2/0h31): projects - formulário e modal de criação de projeto
 feat(2/0h17): projects - preparando api de busca de projetos
