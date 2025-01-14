@@ -11,6 +11,23 @@ import { createAdminClient } from "@/lib/appwrite";
 import { Project } from "@/features/projects/types";
 
 const app = new Hono()
+  .delete("/:taskId", sessionMiddleware, async (c) => {
+    const user = c.get("user");
+    const databases = c.get("databases");
+    const { taskId } = c.req.param();
+
+    const task = await databases.getDocument<Task>(DATABASE_ID, TASKS_ID, taskId);
+
+    const member = await getMember({ databases, workspaceId: task.workspaceId, userId: user.$id });
+
+    if (!member) {
+      return c.json({ error: "Unauthorized" }, 401);
+    }
+
+    await databases.deleteDocument(DATABASE_ID, TASKS_ID, taskId);
+
+    return c.json({ data: { $id: task.$id } });
+  })
   .get(
     "/",
     sessionMiddleware,
@@ -120,7 +137,6 @@ const app = new Hono()
 
     return c.json({ data: task });
   });
-
 // .patch("/:projectId", sessionMiddleware, zValidator("form", updateProjectSchema), async (c) => {
 //   const databases = c.get("databases");
 //   const storage = c.get("storage");
@@ -155,25 +171,5 @@ const app = new Hono()
 
 //   return c.json({ data: project });
 // })
-// .delete("/:projectId", sessionMiddleware, async (c) => {
-//   const databases = c.get("databases");
-//   const user = c.get("user");
-
-//   const { projectId } = c.req.param();
-
-//   const existingProject = await databases.getDocument<Project>(DATABASE_ID, PROJECTS_ID, projectId);
-
-//   const member = await getMember({ databases, workspaceId: existingProject.workspaceId, userId: user.$id });
-
-//   if (!member) {
-//     return c.json({ error: "Unauthorized" }, 401);
-//   }
-
-//   //TODO: Delete tasks
-
-//   await databases.deleteDocument(DATABASE_ID, PROJECTS_ID, projectId);
-
-//   return c.json({ data: { $id: existingProject.$id } });
-// });
 
 export default app;

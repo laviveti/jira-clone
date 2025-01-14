@@ -1,3 +1,4 @@
+feat(2/3h10): tasks - preparando endpoints de deleção
 feat(2/3h07): tasks - compondo TaskActions
 feat(2/3h05): tasks - iniciando componente TaskActions
 feat(2/2h50): tasks - possibilitando filtragem na tabela
