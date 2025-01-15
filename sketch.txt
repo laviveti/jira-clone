@@ -1,3 +1,4 @@
+feat(2/3h14): tasks - deleção de tarefas direto da tabela
 feat(2/3h10): tasks - preparando endpoints de deleção
 feat(2/3h07): tasks - compondo TaskActions
 feat(2/3h05): tasks - iniciando componente TaskActions
