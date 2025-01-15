@@ -1,3 +1,4 @@
+feat(2/3h32): tasks - edição de tarefas
 feat(2/3h23): tasks - iniciando EditTaskFormWrapper
 feat(2/3h14): tasks - deleção de tarefas direto da tabela
 feat(2/3h10): tasks - preparando endpoints de deleção
