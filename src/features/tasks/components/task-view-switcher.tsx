@@ -14,18 +14,24 @@ import { DataTable } from "./data-table";
 import { columns } from "./columns";
 import { DataKanban } from "./data-kanban";
 import { TaskStatus } from "../types";
+import { useBulkUpdateTask } from "../api/use-bulk-update-task";
 
 export const TaskViewSwitcher = () => {
-  const workspaceId = useWorkspaceId();
-  const [view, setView] = useQueryState("task-view", { defaultValue: "table" });
   const [{ status, assigneeId, projectId, dueDate }] = useTaskFilters();
+  const [view, setView] = useQueryState("task-view", { defaultValue: "table" });
 
+  const workspaceId = useWorkspaceId();
   const { open } = useCreateTaskModal();
+
+  const { mutate: bulkUpdate } = useBulkUpdateTask();
   const { data: tasks, isLoading: isLoadingTasks } = useGetTasks({ workspaceId, projectId, assigneeId, status, dueDate });
 
-  const onKanbanChange = React.useCallback((tasks: { $id: string; status: TaskStatus; position: number }[]) => {
-    console.log({ tasks });
-  }, []);
+  const onKanbanChange = React.useCallback(
+    (tasks: { $id: string; status: TaskStatus; position: number }[]) => {
+      bulkUpdate({ json: { tasks } });
+    },
+    [bulkUpdate]
+  );
 
   return (
     <Tabs defaultValue={view} onValueChange={setView} className='flex-1 w-full border rounded-lg'>

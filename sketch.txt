@@ -1,3 +1,4 @@
+feat(2/4h31): tasks - refletindo alterações via kanban
 feat(2/4h27): tasks - preparando endpoint de atualização em massa
 feat(2/4h12): tasks - implementando função onDragEnd
 feat(2/3h50): tasks - implementando DataKanban
