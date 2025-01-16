@@ -1,3 +1,4 @@
+feat(2/4h12): tasks - implementando função onDragEnd
 feat(2/3h50): tasks - implementando DataKanban
 feat(2/3h32): tasks - edição de tarefas
 feat(2/3h23): tasks - iniciando EditTaskFormWrapper
