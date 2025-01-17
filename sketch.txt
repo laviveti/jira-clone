@@ -1,3 +1,4 @@
+feat(2/5h38): tasks - implementando descrição de tarefas
 feat(2/5h30): tasks - implementando componentes TaskDescription
 feat(2/5h25): tasks - implementando componentes TaskOverview
 feat(2/5h03): tasks - implementando componentes DataKanban e EventCard
