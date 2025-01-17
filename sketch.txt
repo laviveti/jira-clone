@@ -1,3 +1,4 @@
+feat(2/5h25): tasks - implementando componentes TaskOverview
 feat(2/5h03): tasks - implementando componentes DataKanban e EventCard
 feat(2/4h27): tasks - preparando endpoint de atualização em massa
 feat(2/4h12): tasks - implementando função onDragEnd
@@ -11,7 +12,7 @@ feat(2/3h05): tasks - iniciando componente TaskActions
 feat(2/2h50): tasks - possibilitando filtragem na tabela
 feat(2/2h48): tasks - adicionando ordenação na tabela
 feat(2/2h41): tasks - iniciando columns.tsx
-feat(2/2h11): tasks - compondo CreateTaskForm com os devidos camposg
+feat(2/2h11): tasks - compondo CreateTaskForm com os devidos campos
 feat(2/2h00): tasks - implementando CreateTaskForm
 feat(2/1h43): tasks - preparando endpoints de busca e criação
 feat(2/1h29): tasks - criando schema para criação de tarefas
