@@ -4,7 +4,7 @@ import React from "react";
 
 const LoadingPage = () => {
   return (
-    <div className='h-screen  flex flex-col items-center justify-center'>
+    <div className='h-screen flex flex-col items-center justify-center'>
       <Loader className='size-8 animate-spin text-muted-foreground' />
     </div>
   );
