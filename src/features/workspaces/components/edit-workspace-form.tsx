@@ -33,7 +33,11 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
   const { mutate: resetInviteCode, isPending: isResettingInviteCode } = useResetInviteCode();
 
   const [DeleteDialog, confirmDelete] = useConfirm("Delete Workspace", "This action cannot be undone?", "destructive");
-  const [ResetDialog, confirmReset] = useConfirm("Reset invite link", "This will invalidate the current invite link?", "destructive");
+  const [ResetDialog, confirmReset] = useConfirm(
+    "Reset invite link",
+    "This will invalidate the current invite link?",
+    "destructive"
+  );
 
   const inputRef = React.useRef<HTMLInputElement>(null);
 
@@ -71,14 +75,7 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
       image: values.image instanceof File ? values.image : "",
     };
 
-    mutate(
-      { form: finalValues, param: { workspaceId: initialValues.$id } },
-      {
-        onSuccess: () => {
-          form.reset();
-        },
-      }
-    );
+    mutate({ form: finalValues, param: { workspaceId: initialValues.$id } });
   };
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -102,7 +99,10 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
       <ResetDialog />
       <Card className='w-full h-full border-none shadow-none'>
         <CardHeader className='flex flex-row items-center gap-x-4 p-7 space-y-0'>
-          <Button size={"sm"} variant={"secondary"} onClick={onCancel ? onCancel : () => router.push(`/workspaces/${initialValues.$id}`)}>
+          <Button
+            size={"sm"}
+            variant={"secondary"}
+            onClick={onCancel ? onCancel : () => router.push(`/workspaces/${initialValues.$id}`)}>
             <ArrowLeftIcon className='size-4 mr-21' />
             Back
           </Button>
@@ -225,7 +225,9 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
         <CardContent className='p-7'>
           <div className='flex flex-col'>
             <h3 className='font-bold'>Danger Zone</h3>
-            <p className='text-sm text-muted-foreground'>Deleting a workspace is irreversible and will remove all associated data.</p>
+            <p className='text-sm text-muted-foreground'>
+              Deleting a workspace is irreversible and will remove all associated data.
+            </p>
             <DottedSeparator className='py-7' />
             <Button
               className='w-fit ml-auto'
