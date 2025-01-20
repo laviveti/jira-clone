@@ -1,3 +1,4 @@
+feat(2/6h31): implementando componente AnalyticsCard
 feat(2/6h21): utilizando hook useGetProjectAnalytics
 feat(2/6h08): tasks - inativando campo descrição ao salvar alterações
 feat(2/6h02): implementando WorkspaceIdJoinClient

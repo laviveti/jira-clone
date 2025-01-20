@@ -11,6 +11,7 @@ import { PageLoader } from "@/components/page-loader";
 import { PageError } from "@/components/page-error";
 import Link from "next/link";
 import { useGetProjectAnalytics } from "@/features/projects/api/use-get-project-analytics";
+import { Analytics } from "@/components/analytics";
 
 export const ProjectIdClient = () => {
   const projectId = useProjectId();
@@ -38,6 +39,7 @@ export const ProjectIdClient = () => {
           </Button>
         </div>
       </div>
+      {analytics ? <Analytics data={analytics} /> : null}
       <TaskViewSwitcher hideProjectFilter />
     </div>
   );
