@@ -18,6 +18,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 import { Project } from "@/features/projects/types";
 import { ProjectAvatar } from "@/features/projects/components/project-avatar";
+import { Member } from "@/features/members/types";
+import { MemberAvatar } from "@/features/members/components/member-avatar";
 
 export const WorkspaceIdClient = () => {
   const workspaceId = useWorkspaceId();
@@ -38,6 +40,7 @@ export const WorkspaceIdClient = () => {
       <div className='grid grid-cols-1 xl:grid-cols-2 gap-4'>
         <TaskList data={tasks.documents} total={tasks.total} />
         <ProjectList data={projects.documents} total={projects.total} />
+        <MemberList data={members.documents} total={members.total} />
       </div>
     </div>
   );
@@ -47,7 +50,6 @@ interface TaskListProps {
   data: Task[];
   total: number;
 }
-
 export const TaskList = ({ data, total }: TaskListProps) => {
   const workspaceId = useWorkspaceId();
   const { open: createTask } = useCreateTaskModal();
@@ -96,7 +98,6 @@ interface ProjectListProps {
   data: Project[];
   total: number;
 }
-
 export const ProjectList = ({ data, total }: ProjectListProps) => {
   const workspaceId = useWorkspaceId();
   const { open: createProject } = useCreateProjectModal();
@@ -125,6 +126,46 @@ export const ProjectList = ({ data, total }: ProjectListProps) => {
             </li>
           ))}
           <li className='text-sm text-muted-foreground text-center hidden first-of-type:block'>No projects found</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+interface MemberListProps {
+  data: Member[];
+  total: number;
+}
+export const MemberList = ({ data, total }: MemberListProps) => {
+  const workspaceId = useWorkspaceId();
+
+  return (
+    <div className='flex flex-col gap-y-4 col-span-1'>
+      <div className='bg-white border rounded-lg p-4'>
+        <div className='flex items-center justify-between'>
+          <p className='text-lg font-semibold'>Members ({total})</p>
+          <Button asChild variant={"secondary"} size={"icon"}>
+            <Link href={`/workspaces/${workspaceId}/members`}>
+              <SettingsIcon className='size-4 text-neutral-400' />
+            </Link>
+          </Button>
+        </div>
+        <DottedSeparator className='my-4' />
+        <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+          {data.map((member) => (
+            <li key={member.$id}>
+              <Card className='shadow-none rounded-lg overflow-hidden'>
+                <CardContent className='p-3 flex flex-col items-center gap-x-2'>
+                  <MemberAvatar className='size-12' name={member.name} />
+                  <div className='flex flex-col items-center overflow-hidden'>
+                    <p className='text-lg font-medium truncate'>{member.name}</p>
+                    <p className='text-sm text-muted-foreground line-clamp-1'>{member.email}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </li>
+          ))}
+          <li className='text-sm text-muted-foreground text-center hidden first-of-type:block'>No members found</li>
         </ul>
       </div>
     </div>

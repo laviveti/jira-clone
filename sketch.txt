@@ -1,3 +1,4 @@
+feat(2/7h03): implementando MemberList em WorkspaceIdClient
 feat(2/6h57): implementando ProjectList em WorkspaceIdClient
 feat(2/6h44): implementando Analytics em WorkspaceIdClient
 feat(2/6h36): implementando componente Analytics
