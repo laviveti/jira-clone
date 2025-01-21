@@ -4,15 +4,12 @@ import { useGetProjects } from "@/features/projects/api/use-get-projects";
 import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id";
 import { RiAddCircleFill } from "react-icons/ri";
 import { usePathname } from "next/navigation";
-import path from "path";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useCreateProjectModal } from "@/features/projects/hooks/use-create-project-modal";
 import { ProjectAvatar } from "@/features/projects/components/project-avatar";
 
 export const Projects = () => {
-  const projectId = null; // TODO: use the useProjectId hook
-
   const pathname = usePathname();
   const { open } = useCreateProjectModal();
   const workspaceId = useWorkspaceId();

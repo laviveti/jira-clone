@@ -222,9 +222,9 @@ const app = new Hono()
       }
 
       const workspaceId = workspaceIds.values().next().value;
+      if (!workspaceId) return c.json({ error: "Workspace ID is required" }, 400);
 
-      const member = await getMember({ databases, workspaceId: workspaceId!, userId: user.$id });
-
+      const member = await getMember({ databases, workspaceId: workspaceId, userId: user.$id });
       if (!member) return c.json({ error: "Unauthorized" }, 401);
 
       const updatedTasks = await Promise.all(

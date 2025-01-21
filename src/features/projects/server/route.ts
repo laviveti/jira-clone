@@ -118,6 +118,12 @@ const app = new Hono()
     }
 
     //TODO: Delete tasks
+    const tasks = await databases.listDocuments(DATABASE_ID, TASKS_ID, [Query.equal("projectId", projectId)]);
+
+    // Deletar cada tarefa
+    for (const task of tasks.documents) {
+      await databases.deleteDocument(DATABASE_ID, TASKS_ID, task.$id);
+    }
 
     await databases.deleteDocument(DATABASE_ID, PROJECTS_ID, projectId);
 

@@ -22,6 +22,7 @@ export const Navbar = () => {
   const pathname = usePathname();
   const pathnameParts = pathname.split("/");
   const pathnameKey = pathnameParts[3] as keyof typeof pathnameMap;
+
   const { title, description } = pathnameMap[pathnameKey] || defaultMap;
 
   return (
