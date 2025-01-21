@@ -1,3 +1,4 @@
+feat(2/7h23): implementando login com Github
 feat(2/7h13): Resolvendo erros de build
 refactor(2/7h07): tornando a navbar dinâmica
 feat(2/7h03): implementando MemberList em WorkspaceIdClient
