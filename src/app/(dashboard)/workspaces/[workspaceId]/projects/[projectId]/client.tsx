@@ -21,8 +21,8 @@ export const ProjectIdClient = () => {
   const isLoading = isLoadingProject || isLoadingAnalytics;
 
   if (isLoading) return <PageLoader />;
-
   if (!project) return <PageError message='Project not found' />;
+
   return (
     <div className='flex flex-col gap-y-4'>
       <div className='flex items-center justify-between'>
